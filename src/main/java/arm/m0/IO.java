@@ -2,11 +2,9 @@ package arm.m0;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
-import java.nio.file.Paths;
 
 import org.apache.commons.io.FilenameUtils;
 
@@ -55,27 +53,6 @@ public class IO {
 			System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream( new File( filePath ).getPath() )), true)); // Auto-Flush flag set
 		} catch (FileNotFoundException e) {
 			throw new Exception("enable to set output file.");
-		}
-	}
-
-	public void setIn(String filePath) throws Exception {
-
-		if (filePath == null || filePath.isEmpty()) {
-			throw new Exception("no input file given.");
-		}
-		
-		filePath = FilenameUtils.normalize(filePath);
-
-		File file = Paths.get( filePath ).normalize().toFile();
-
-		if (!file.exists() || !file.isFile()) {
-			throw new Exception("input file not found.");
-		}
-
-		try {
-			System.setIn(new FileInputStream(file));
-		} catch (FileNotFoundException e) {
-			// Do nothing, this error is handled above
 		}
 	}
 }
