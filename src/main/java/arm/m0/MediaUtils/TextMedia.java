@@ -13,11 +13,6 @@ public class TextMedia extends Media {
 	 */
 	private LineIterator filePtr = null;
 
-	/**
-	 * stores the remaining instruction of the current line as a buffer
-	 */
-	private StringBuffer lineBuffer = new StringBuffer();
-
 	public TextMedia(File f) throws Exception {
 
 		if (f == null) {
@@ -40,43 +35,26 @@ public class TextMedia extends Media {
 	 * @return String Operator String or The Empty String if EOF reached
 	 */
 	@Override
-	public String getNextWord() {
+	public String[] getNextLine() {
 
-		String next = "";
-		
-		// if buffer is empty, populate
-		if (this.lineBuffer.length() == 0) {
-			
-			// EOF
-			if (!this.filePtr.hasNext()) {
-				return null;
-			}
+		String[] next;
+		StringBuffer buff = new StringBuffer();
 
-			this.lineBuffer.append(this.filePtr.next().trim());
+		// EOF
+		if (!this.filePtr.hasNext()) {
+			return null;
 		}
 		
-		// fetch the next word
-		if (this.lineBuffer.toString().contains(" ")) {
-			String[] parts = this.lineBuffer.toString().split(" ");
-			next = parts[0];	
-		} else {
-			next = this.lineBuffer.toString();
+		buff.append(this.filePtr.next().trim());
+		if (!buff.toString().contains(" ")) {
+			return null;
 		}
-		
-		// remove from the buffer the word
-		this.lineBuffer.delete(0, next.length());
-		
-		// trim the buffer
-		if (this.lineBuffer.length() > 0) {
-			if (this.lineBuffer.charAt(0) == ' ') {
-				this.lineBuffer.delete(0, 1);
-			}
-			if (this.lineBuffer.charAt(this.lineBuffer.length() - 1) == ' ') {
-				this.lineBuffer.delete(this.lineBuffer.length() - 1, 1);
-			}
+
+		next = buff.toString().split(" ");
+		if (next.length != 2) {
+			return null;
 		}
-		
-		// Return the next word as String
+
 		return next;
 	}
 }

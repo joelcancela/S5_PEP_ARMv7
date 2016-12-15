@@ -1,1 +1,2 @@
-EOR(50) AND(1)
+LSL R1,R0	
+LSL R1,R0,#3
