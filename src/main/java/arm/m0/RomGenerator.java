@@ -1,16 +1,6 @@
 package arm.m0;
 
-import java.awt.Color;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-
-import javax.imageio.ImageIO;
-
-import arm.m0.v1.MediaUtils.Media;
-import arm.m0.v1.Opcodes.Opcode;
+import arm.m0.MediaUtils.Media;
 
 public class RomGenerator {
 
@@ -24,15 +14,15 @@ public class RomGenerator {
 	public static Rom generateROM(Media media) throws Exception {
 
 		Rom rom = new Rom();
-		Opcode instruction = media.getNextInstruction();
+		String w = media.getNextWord();
 
-		while (instruction != null) {
+		while (w != null) {
 
 			// Append
-			rom.append(instruction);
+			rom.append(w);
 
 			// Get next
-			instruction = media.getNextInstruction();
+			w = media.getNextWord();
 		}
 		
 		return rom;

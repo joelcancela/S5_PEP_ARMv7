@@ -2,7 +2,7 @@ package arm.m0;
 
 import org.apache.commons.cli.*;
 
-import arm.m0.v1.MediaUtils.MediaFactory;
+import arm.m0.MediaUtils.MediaFactory;
 
 public class Launcher {
 	
