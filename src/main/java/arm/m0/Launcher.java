@@ -21,7 +21,7 @@ public class Launcher {
 		CommandLine cmd;
 
 		options.addOption("i", "--opcodes", true, "the ROM initializer as text file (OPCODES).");
-		options.addOption("o", "--out", true, "the generated ROM file for Logisim.");
+		options.addOption("o", "--out", true, "the generated ROM file for Logisim (rom.ini).");
 
 		/**
 		 * CLI Processing
