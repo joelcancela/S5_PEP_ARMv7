@@ -1,0 +1,75 @@
+A 00xxxx Shift, Move, Add, Sub
+B 010000 Data Processing
+C        Load/store
+	LDR / STR
+D        Branchement
+
+Inst 16 bits
+
+type b : codop1(type), codop2(operation), Rn, Rmd (opérandes)
+
+exemple : EOR R3,R2 : R2 <= R3 xor R2
+
+--- TYPE A (7 instructions) ---
+/* Coded using 5 bits (ALU*) to separate ADD (R) / ADD (I) (example)*/
+
+	Shift (immediate)
+		opcode : 000xx Logical shift left           LSL
+		opcode : 001xx Logical shift right          LSR
+		opcode : 010xx Arithmetic shift right       ASR
+	Add
+		opcode : 01100 Add register	            	ADD
+		opcode : 0
+	Move
+		opcode : 100xx Move 			    		MOV
+	Sub
+		opcode : 01101 Substract register     	    SUB
+
+--- TYPE B (16 instructions)---
+	Data processing
+
+	Bitwise AND 									AND(register)
+		opcode : 0000 
+	Exclusive OR 									EOR(register)
+		opcode : 0001
+	Logical Shift Left 								LSL(register)
+		opcode : 0010
+	Logical Shift Right								LSR(register)
+		opcode : 0011
+	Arithmetic Shift Right							ASR(register)
+		opcode : 0100
+	Add with carry									ADC(register)
+		opcode : 0101
+	Substract with carry							SBC(register)
+		opcode : 0110
+	Rotate Right									ROR(register)
+		opcode : 0111
+	Set flags on bitwise AND						TST(register)
+		opcode : 1000
+	Reverse Substract from 0						RSB(register)
+		opcode : 1001
+	Compare registers								CMP(register)
+		opcode : 1010
+	Compare negative								CMN(register)
+		opcode : 1011
+	Logical OR										ORR(register)
+		opcode : 1100
+	Multiply two registers							MUL
+		opcode : 1101
+	Bit clear										BIC(register)
+		opcode : 1110 
+	Bitwise NOT										MVN(register
+		opcode : 1111
+	 
+--- TYPE C (2 instructions)---
+	opA = 0110	
+
+	Store register									STR(immediate)
+		opB = 0xx
+	Load register									LDR(immediate)
+		opB = 1xx
+
+--- TYPE D (1 instruction)---
+
+	Conditional branch
+		opcode : not 111x
