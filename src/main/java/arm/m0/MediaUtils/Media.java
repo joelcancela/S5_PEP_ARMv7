@@ -10,7 +10,7 @@ package arm.m0.MediaUtils;
 public abstract class Media {
 
 	/**
-	 * Reads the next word of the rom
+	 * Reads the next line
 	 */
-	public abstract String getNextWord();
+	public abstract String[] getNextLine();
 }
