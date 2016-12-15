@@ -20,8 +20,8 @@ public class Launcher {
 		HelpFormatter formatter = new HelpFormatter();
 		CommandLine cmd;
 
-		options.addOption("i", "--opcodes", true, "the ROM initializer as text file (OPCODES).");
-		options.addOption("o", "--out", true, "the generated ROM file for Logisim (rom.ini).");
+		options.addOption("i", "--asm", true, "the ROM initializer as text file (OPCODES).");
+		options.addOption("o", "--ini", true, "the generated ROM file for Logisim (rom.ini).");
 
 		/**
 		 * CLI Processing
@@ -37,12 +37,19 @@ public class Launcher {
 		}
 		
 		/**
-		 * Set output stream if any
+		 * Set output file
 		 */
 
 		if (cmd.hasOption("o")) {
 			try {
 				IO.getInstance().setOut(cmd.getOptionValue("o"));
+			} catch (Exception e) {
+				System.err.println(e.getMessage());
+				System.exit(1);
+			}
+		} else {
+			try {
+				IO.getInstance().setOut("rom.ini");
 			} catch (Exception e) {
 				System.err.println(e.getMessage());
 				System.exit(1);
