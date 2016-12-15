@@ -45,8 +45,14 @@ public class TextMedia extends Media {
 		String next = "";
 		
 		// if buffer is empty, populate
-		if (this.lineBuffer == null) {
-			this.lineBuffer.append(this.filePtr.next());
+		if (this.lineBuffer.length() == 0) {
+			
+			// EOF
+			if (!this.filePtr.hasNext()) {
+				return null;
+			}
+
+			this.lineBuffer.append(this.filePtr.next().trim());
 		}
 		
 		// fetch the next word
@@ -56,11 +62,21 @@ public class TextMedia extends Media {
 		} else {
 			next = this.lineBuffer.toString();
 		}
-
+		
 		// remove from the buffer the word
 		this.lineBuffer.delete(0, next.length());
 		
-
-		return next; // Return 
+		// trim the buffer
+		if (this.lineBuffer.length() > 0) {
+			if (this.lineBuffer.charAt(0) == ' ') {
+				this.lineBuffer.delete(0, 1);
+			}
+			if (this.lineBuffer.charAt(this.lineBuffer.length() - 1) == ' ') {
+				this.lineBuffer.delete(this.lineBuffer.length() - 1, 1);
+			}
+		}
+		
+		// Return the next word as String
+		return next;
 	}
 }
