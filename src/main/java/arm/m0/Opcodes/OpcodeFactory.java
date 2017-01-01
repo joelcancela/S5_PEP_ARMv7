@@ -10,11 +10,11 @@ public class OpcodeFactory {
 
 	public OpcodeFactory(){
 		//Category A
-		immediatesDuplicates.put("LSL","000"+"00");//A7-298 3args
-		immediatesDuplicates.put("LSR","000"+"01");//A7-302 3args
-		immediatesDuplicates.put("ASR","000"+"10");//A7-203 3args
+		immediatesDuplicates.put("LSL","000"+"00");
+		immediatesDuplicates.put("LSR","000"+"01");
+		immediatesDuplicates.put("ASR","000"+"10");
 
-		keywords.put("ADD","000"+"1100");//A7-191 3args
+		keywords.put("ADD","000"+"1100");
 		keywords.put("SUB","000"+"1101");//A7-450 3args
 		keywords.put("MOV","001"+"00");//A7-312 2args
 		//Category B
