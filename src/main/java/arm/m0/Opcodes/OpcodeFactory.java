@@ -36,8 +36,8 @@ public class OpcodeFactory {
 		keywordsBToBinary.put("BIC","0100001110");//A7-213
 		keywordsBToBinary.put("MVN","0100001111");//A7-328
 		//Category C
-		keywordsCToBinary.put("STR","01100");//A7-426 T1
-		keywordsCToBinary.put("LDR","01101");//A7-252 T1
+		keywordsCToBinary.put("STR","10010");//A7-426 T2
+		keywordsCToBinary.put("LDR","10011");//A7-252 T2
 		//Category D
 		keywordsDToBinary.put("B","1101");//A7-207 T1
 
