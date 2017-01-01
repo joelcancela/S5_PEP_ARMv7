@@ -26,10 +26,10 @@ public class Reader {
 		int romCount=0;
 		int ramCount=0;
 		for (String line = reader.readLine(); line != null; line = reader.readLine()) {
-			if(romCount%8==0){
+			if(romCount%4==0){
 				romContent+="\n";
 			}
-			if(ramCount%8==0){
+			if(ramCount%4==0){
 				ramContent+="\n";
 			}
 			String[] tokens = line.split("\\s*(\\s|,)\\s*");

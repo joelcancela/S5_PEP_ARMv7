@@ -39,6 +39,6 @@ public class TextToOpcodes {
 				e.printStackTrace();
 			}
 		}
-		return binaryCode;
+		return binaryCode.replaceAll("....(?!$)", "$0 ");
 	}
 }
