@@ -35,12 +35,14 @@ public class Reader {
 			String[] tokens = line.split("\\s*(\\s|,)\\s*");
 			if(tokens[0].equals("LDR") || tokens[0].equals("STR")){
 				ramContent+= TextToOpcodes.convert(tokens);
+				ramCount++;
 			}
 			else{
 				romContent+= TextToOpcodes.convert(tokens);
+				romCount++;
 			}
-			romCount++;
-			ramCount++;
+
+
 
 		}
 		writeFiles();
