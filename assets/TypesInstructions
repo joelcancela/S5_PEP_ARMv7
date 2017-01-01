@@ -69,7 +69,11 @@ exemple : EOR R3,R2 : R2 <= R3 xor R2
 	Load register									LDR(immediate)
 		opB = 1xx
 
+
+////
 --- TYPE D (1 instruction)---
 
 	Conditional branch
 		opcode : not 111x
+
+
