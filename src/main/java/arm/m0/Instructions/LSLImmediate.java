@@ -10,7 +10,7 @@ public class LSLImmediate {
 	String rm;
 	String rd;
 
-	public LSLImmediate(String[] args){
+	public LSLImmediate(String... args){
 
 		//args[2] = nb entre 0-31 on veut le binaire sur 5 bits
 		imm5 = String.format("%05d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(args[2]))));
