@@ -12,7 +12,7 @@ public class MOV {
 	public MOV(String[] args){
 
 		//args[1] 8 bits
-		imm8 = String.format("%08d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(args[1]))));
+		imm8 = String.format("%08d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(args[1].substring(1)))));
 
 		//args[0] 3 bits
 		rd = String.format("%03d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(args[0].substring(1)))));

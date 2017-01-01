@@ -10,7 +10,7 @@ public class STR {
 
 	public STR(String[] args){
 
-		imm8 = String.format("%08d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(args[1]))));
+		imm8 = String.format("%08d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(args[1].substring(1)))));
 		rt = String.format("%03d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(args[0].substring(1)))));
 	}
 
