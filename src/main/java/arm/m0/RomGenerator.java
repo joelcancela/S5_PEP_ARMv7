@@ -1,6 +1,7 @@
 package arm.m0;
 
 import arm.m0.MediaUtils.Media;
+import arm.m0.Opcodes.OpcodeFactory;
 
 public class RomGenerator {
 
@@ -14,15 +15,20 @@ public class RomGenerator {
 	public static Rom generateROM(Media media) throws Exception {
 
 		Rom rom = new Rom();
-		String w = media.getNextWord();
+		OpcodeFactory f = new OpcodeFactory();
 
-		while (w != null) {
+		String[] line = media.getNextLine();
+
+		while (line != null) {
+			
+			String op = line[0];
+			String args = line[1];
 
 			// Append
-			rom.append(w);
+			rom.append(f.getOpcode(op, args));
 
 			// Get next
-			w = media.getNextWord();
+			line = media.getNextLine();
 		}
 		
 		return rom;

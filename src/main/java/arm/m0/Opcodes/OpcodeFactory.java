@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class OpcodeFactory {
+
 	Map<String,String> keywordsAToBinary = new HashMap<String, String>();
 	Map<String,String> keywordsBToBinary = new HashMap<String, String>();
 	Map<String,String> keywordsCToBinary = new HashMap<String, String>();
@@ -40,8 +41,9 @@ public class OpcodeFactory {
 		//Category D
 		keywordsDToBinary.put("B","1101");//A7-207 T1
 
-
 	}
-
 	
+	public Opcode getOpcode(String operator, String csvArgs) {
+		return null;
+	}
 }
