@@ -23,7 +23,15 @@ public class Reader {
 	}
 
 	public void convert() throws IOException {
+		int romCount=0;
+		int ramCount=0;
 		for (String line = reader.readLine(); line != null; line = reader.readLine()) {
+			if(romCount==8){
+				romContent+="\n";
+			}
+			if(ramCount==8){
+				ramContent+="\n";
+			}
 			String[] tokens = line.split("\\s*(\\s|,)\\s*");
 			if(tokens[0].equals("LDR") || tokens[0].equals("STR")){
 				ramContent+= TextToOpcodes.convert(tokens);
@@ -31,7 +39,8 @@ public class Reader {
 			else{
 				romContent+= TextToOpcodes.convert(tokens);
 			}
-
+			romCount++;
+			ramCount++;
 
 		}
 		writeFiles();
