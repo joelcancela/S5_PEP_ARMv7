@@ -13,7 +13,7 @@ public class TextToOpcodes {
 		String binaryCode = "";
 		String instructionName = "arm.m0.Instructions.";
 		String[] args = Arrays.copyOfRange(tokens,1,tokens.length);
-		if (factory.immediatesDuplicates.containsKey(tokens[0]) && tokens.length == 4) {
+		if (factory.immediatesDuplicates.contains(tokens[0]) && tokens.length == 4) {
 		instructionName+= tokens[0]+"Immediate";
 
 			try {
