@@ -10,7 +10,7 @@ public class BRANCH {
 	public BRANCH(String[] args){
 
 		//args[2] = nb entre 0-31 on veut le binaire sur 5 bits
-		imm8 = String.format("%08d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(args[0].substring(1)))));
+		imm8 = String.format("%08d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(args[0]))));
 	}
 
 	@Override
