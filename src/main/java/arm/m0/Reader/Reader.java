@@ -59,8 +59,8 @@ public class Reader {
 		FileWriter romWriter = new FileWriter(romFile);
 		FileWriter ramWriter = new FileWriter(ramFile);
 		// Writes the content to the file
-		romWriter.write("v2.0 raw \n");
-		ramWriter.write("v2.0 raw \n");
+		romWriter.write("v2.0 raw");
+		ramWriter.write("v2.0 raw");
 
 		romWriter.write(romContent);
 		ramWriter.write(ramContent);
