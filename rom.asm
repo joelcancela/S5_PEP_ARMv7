@@ -1,2 +1,2 @@
 LSL R1,R0	
-LSL R1,R0,#3
+LSL R1,R0,3
