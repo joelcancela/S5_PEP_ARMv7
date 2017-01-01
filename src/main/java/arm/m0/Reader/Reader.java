@@ -34,11 +34,11 @@ public class Reader {
 			}
 			String[] tokens = line.split("\\s*(\\s|,)\\s*");
 			if(tokens[0].equals("LDR") || tokens[0].equals("STR")){
-				ramContent+= TextToOpcodes.convert(tokens);
+				ramContent+= TextToOpcodes.convert(tokens)+" ";
 				ramCount++;
 			}
 			else{
-				romContent+= TextToOpcodes.convert(tokens);
+				romContent+= TextToOpcodes.convert(tokens)+" ";
 				romCount++;
 			}
 
