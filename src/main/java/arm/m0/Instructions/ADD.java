@@ -3,15 +3,22 @@ package arm.m0.Instructions;
 /**
  * Created by Joel CANCELA VAZ on 01/01/2017.
  */
-public class ADD {//A7-191 3args
+//A7-191 3args
+public class ADD {
 	String rm;
 	String rn;
 	String rd;
 
-	public ADD(String... args){
-		rm = args[2];//args[2] = "Rx" x un nombre on veut son binaire sur 3 bits
-		rn = args[1];//args[1] = "Rx" x un nombre on veut son binaire sur 3 bits
-		rd = args[0];//args[0] = "Rx" x un nombre on veut son binaire sur 3 bits
+	public ADD(String[] args){
+
+		//args[2] = "Rx" x un nombre on veut son binaire sur 3 bits
+		rm = String.format("%03d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(args[2].substring(1)))));
+
+		//args[1] = "Rx" x un nombre on veut son binaire sur 3 bits
+		rn = String.format("%03d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(args[1].substring(1)))));
+
+		//args[0] = "Rx" x un nombre on veut son binaire sur 3 bits
+		rd = String.format("%03d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(args[0].substring(1)))));
 	}
 
 	@Override

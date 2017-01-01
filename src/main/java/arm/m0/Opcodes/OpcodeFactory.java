@@ -15,9 +15,11 @@ public class OpcodeFactory {
 		immediatesDuplicates.put("ASR","000"+"10");
 
 		keywords.put("ADD","000"+"1100");
-		keywords.put("SUB","000"+"1101");//A7-450 3args
-		keywords.put("MOV","001"+"00");//A7-312 2args
+		keywords.put("SUB","000"+"1101");	//A7-450 3args
+		keywords.put("MOV","001"+"00");		//A7-312 2args
+
 		//Category B
+
 		keywords.put("AND","0100000000");//A7-201 2args
 		keywords.put("EOR","0100000001");//A7-239 2args
 		keywords.put("LSL","0100000010");//A7-300 2args
@@ -34,9 +36,11 @@ public class OpcodeFactory {
 		keywords.put("MUL","0100001101");//A7-324 3args
 		keywords.put("BIC","0100001110");//A7-213 2args
 		keywords.put("MVN","0100001111");//A7-328 2args
+
 		//Category C
 		keywords.put("STR","10010");//A7-426 T2 2args
 		keywords.put("LDR","10011");//A7-252 T2 2args
+
 		//Category D
 		keywords.put("B","1101");//A7-207 T1 2args
 
