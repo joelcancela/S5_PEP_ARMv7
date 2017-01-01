@@ -44,7 +44,7 @@ public class OpcodeFactory {
 		keywords.add("LDR");
 
 		//Category D
-		keywords.add("B");
+		keywords.add("BRANCH");
 
 	}
 }
