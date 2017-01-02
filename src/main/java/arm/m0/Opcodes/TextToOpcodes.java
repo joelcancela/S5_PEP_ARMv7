@@ -39,6 +39,6 @@ public class TextToOpcodes {
 				e.printStackTrace();
 			}
 		}
-		return binaryCode.replaceAll("....(?!$)", "$0 ");
+		return String.format("%04X",Integer.parseInt(binaryCode,2));
 	}
 }
