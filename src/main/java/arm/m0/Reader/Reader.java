@@ -9,7 +9,7 @@ import java.io.*;
  */
 public class Reader {
 	public String romContent = "";
-	public String ramContent = "";
+//	public String ramContent = "";
 	private BufferedReader reader;
 
 	public Reader(String filename) {
@@ -24,23 +24,23 @@ public class Reader {
 
 	public void convert() throws IOException {
 		int romCount=0;
-		int ramCount=0;
+//		int ramCount=0;
 		for (String line = reader.readLine(); line != null; line = reader.readLine()) {
 			if(romCount%4==0){
 				romContent+="\n";
 			}
-			if(ramCount%4==0){
-				ramContent+="\n";
-			}
+//			if(ramCount%4==0){
+//				ramContent+="\n";
+//			}
 			String[] tokens = line.split("\\s*(\\s|,)\\s*");
-			if(tokens[0].equals("LDR") || tokens[0].equals("STR")){
-				ramContent+= TextToOpcodes.convert(tokens)+" ";
-				ramCount++;
-			}
-			else{
+//			if(tokens[0].equals("LDR") || tokens[0].equals("STR")){
+//				ramContent+= TextToOpcodes.convert(tokens)+" ";
+//				ramCount++;
+//			}
+//			else{
 				romContent+= TextToOpcodes.convert(tokens)+" ";
 				romCount++;
-			}
+//			}
 
 
 
@@ -51,23 +51,23 @@ public class Reader {
 
 	public void writeFiles() throws IOException {
 		File romFile = new File("rom.ini");
-		File ramFile = new File("ram.ini");
+//		File ramFile = new File("ram.ini");
 		// creates the file
 		romFile.createNewFile();
-		ramFile.createNewFile();
+//		ramFile.createNewFile();
 		// creates a FileWriter Object
 		FileWriter romWriter = new FileWriter(romFile);
-		FileWriter ramWriter = new FileWriter(ramFile);
+//		FileWriter ramWriter = new FileWriter(ramFile);
 		// Writes the content to the file
 		romWriter.write("v2.0 raw");
-		ramWriter.write("v2.0 raw");
+//		ramWriter.write("v2.0 raw");
 
 		romWriter.write(romContent);
-		ramWriter.write(ramContent);
+//		ramWriter.write(ramContent);
 
 		romWriter.flush();
-		ramWriter.flush();
+//		ramWriter.flush();
 		romWriter.close();
-		ramWriter.close();
+//		ramWriter.close();
 	}
 }
