@@ -1,6 +1,7 @@
 *.asm
 *.s
 *.ini
+*.txt
 *.class
 
 # Mobile Tools for Java (J2ME)

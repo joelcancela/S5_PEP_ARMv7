@@ -7,12 +7,12 @@ import java.io.*;
 /**
  * Created by Joel CANCELA VAZ on 01/01/2017.
  */
-public class Reader {
+public class ROMConverter {
 	public String romContent = "";
 //	public String ramContent = "";
 	private BufferedReader reader;
 
-	public Reader(String filename) {
+	public ROMConverter(String filename) {
 		FileReader fileReader = null;
 		try {
 			fileReader = new FileReader(new File(filename));
@@ -45,11 +45,11 @@ public class Reader {
 
 
 		}
-		writeFiles();
+		writeROM();
 
 	}
 
-	public void writeFiles() throws IOException {
+	public void writeROM() throws IOException {
 		File romFile = new File("rom.ini");
 //		File ramFile = new File("ram.ini");
 		// creates the file
