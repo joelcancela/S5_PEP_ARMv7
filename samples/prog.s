@@ -1,0 +1,8 @@
+LDR R0, #0
+LDR R1, #0
+SUB R0, R1, R0
+BRANCH 5
+LDR R2, #2
+LDR R3, #3
+LSL R0, R1, #3
+ORR R2, R3

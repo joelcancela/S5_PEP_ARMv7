@@ -15,29 +15,18 @@ public class TextToOpcodes {
 		String[] args = Arrays.copyOfRange(tokens,1,tokens.length);
 		if (factory.immediatesDuplicates.contains(tokens[0]) && tokens.length == 4) {
 		instructionName+= tokens[0]+"Immediate";
-
-			try {
-				Class myClass = Class.forName(instructionName);
-				Constructor constructor = myClass.getConstructor(String[].class);
-
-				Object[] parameters = {args};
-				Object instanceOfMyClass = constructor.newInstance(parameters);
-				binaryCode += instanceOfMyClass.toString();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 		} else {
 			instructionName+= tokens[0];
-			try {
-				Class myClass = Class.forName(instructionName);
-				Constructor constructor = myClass.getConstructor(String[].class);
+		}
+		try {
+			Class myClass = Class.forName(instructionName);
+			Constructor constructor = myClass.getConstructor(String[].class);
 
-				Object[] parameters = {args};
-				Object instanceOfMyClass = constructor.newInstance(parameters);
-				binaryCode += instanceOfMyClass.toString();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			Object[] parameters = {args};
+			Object instanceOfMyClass = constructor.newInstance(parameters);
+			binaryCode += instanceOfMyClass.toString();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		return String.format("%04X",Integer.parseInt(binaryCode,2));
 	}

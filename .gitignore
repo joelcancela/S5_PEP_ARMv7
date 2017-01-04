@@ -1,6 +1,5 @@
-*.asm
-*.s
-*.ini
+rom.ini
+ram.ini
 *.txt
 *.class
 
