@@ -9,7 +9,7 @@ All instructions implemented are on 16 bits.
 | A    | 00xxxx   | Shift, Move, Add, Sub |
 | B    | 010000   | Data Processing       |
 | C    | 1001x    | Load, Store           |
-| D    | 11010000 | Conditional Branch (NE)    |
+| D    | 11010000 | Conditional Branch    |
 
 
 ### Listing
@@ -45,7 +45,7 @@ Type C (2 instructions)
 * Load register - LDR(immediate)
 
 Type D (1 instruction)
-* Conditional branch (condition NE) - B
+* Conditional branch - B
 
 #### Notes
-* For the conditional branch, we chose to implement the NE flag by default.
+* For the conditional branch, we chose to implement the EQ flag by default.

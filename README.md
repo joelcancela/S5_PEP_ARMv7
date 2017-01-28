@@ -2,6 +2,7 @@
 This is a configuration file generator for Logisim.<br>
 
 It allows to generate configuration files for RAM and ROM components.
+
 It was made to support some ARM M0 instructions [more details here](doc/instructions.md).
 
 ## How to use
