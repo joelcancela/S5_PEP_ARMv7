@@ -1,14 +1,14 @@
 package arm.m0.Instructions;
 
 /**
- * Created by nikita on 01/01/2017.
+ * Exclusive OR (register)
  */
 // A7-239 2args
 public class EOR {
 	String rm;
 	String rdn;
 
-	public EOR(String[] args){
+	public EOR(String[] args) {
 
 		//args[1] 8 bits
 		rm = String.format("%03d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(args[1].substring(1)))));
@@ -19,6 +19,6 @@ public class EOR {
 
 	@Override
 	public String toString() {
-		return "0100000001"+rm+rdn;
+		return "0100000001" + rm + rdn;
 	}
 }

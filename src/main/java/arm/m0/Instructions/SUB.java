@@ -1,7 +1,7 @@
 package arm.m0.Instructions;
 
 /**
- * Created by Joel CANCELA VAZ on 01/01/2017.
+ * Subtract (register)
  */
 //A7-450 3args
 public class SUB {
@@ -10,7 +10,7 @@ public class SUB {
 	String rn;
 	String rd;
 
-	public SUB(String[] args){
+	public SUB(String[] args) {
 
 		//args[2] = "Rx" x un nombre on veut son binaire sur 3 bits
 		rm = String.format("%03d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(args[2].substring(1)))));
@@ -24,6 +24,6 @@ public class SUB {
 
 	@Override
 	public String toString() {
-		return "0001101"+rm+rn+rd;
+		return "0001101" + rm + rn + rd;
 	}
 }

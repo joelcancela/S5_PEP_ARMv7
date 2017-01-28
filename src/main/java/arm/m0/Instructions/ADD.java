@@ -1,7 +1,7 @@
 package arm.m0.Instructions;
 
 /**
- * Created by Joel CANCELA VAZ on 01/01/2017.
+ * Binary Add (register)
  */
 //A7-191 3args
 public class ADD {
@@ -9,7 +9,7 @@ public class ADD {
 	String rn;
 	String rd;
 
-	public ADD(String[] args){
+	public ADD(String[] args) {
 
 		//args[2] = "Rx" x un nombre on veut son binaire sur 3 bits
 		rm = String.format("%03d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(args[2].substring(1)))));
@@ -23,6 +23,6 @@ public class ADD {
 
 	@Override
 	public String toString() {
-		return "0001100"+rm+rn+rd;
+		return "0001100" + rm + rn + rd;
 	}
 }

@@ -1,7 +1,7 @@
 package arm.m0.Instructions;
 
 /**
- * Created by Joel CANCELA VAZ on 01/01/2017.
+ * Logical Shift Left (immediate)
  */
 
 // A7-298
@@ -10,7 +10,7 @@ public class LSLImmediate {
 	String rm;
 	String rd;
 
-	public LSLImmediate(String[] args){
+	public LSLImmediate(String[] args) {
 
 		//args[2] = nb entre 0-31 on veut le binaire sur 5 bits
 		imm5 = String.format("%05d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(args[2].substring(1)))));
@@ -24,6 +24,6 @@ public class LSLImmediate {
 
 	@Override
 	public String toString() {
-		return "00000"+imm5+rm+rd;
+		return "00000" + imm5 + rm + rd;
 	}
 }

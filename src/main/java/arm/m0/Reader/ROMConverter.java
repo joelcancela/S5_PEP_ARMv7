@@ -9,7 +9,7 @@ import java.io.*;
  */
 public class ROMConverter {
 	public String romContent = "";
-//	public String ramContent = "";
+	//	public String ramContent = "";
 	private BufferedReader reader;
 
 	public ROMConverter(String filename) {
@@ -23,11 +23,11 @@ public class ROMConverter {
 	}
 
 	public void convert() throws IOException {
-		int romCount=0;
+		int romCount = 0;
 //		int ramCount=0;
 		for (String line = reader.readLine(); line != null; line = reader.readLine()) {
-			if(romCount%4==0){
-				romContent+="\n";
+			if (romCount % 4 == 0) {
+				romContent += "\n";
 			}
 //			if(ramCount%4==0){
 //				ramContent+="\n";
@@ -38,10 +38,9 @@ public class ROMConverter {
 //				ramCount++;
 //			}
 //			else{
-				romContent+= TextToOpcodes.convert(tokens)+" ";
-				romCount++;
+			romContent += TextToOpcodes.convert(tokens) + " ";
+			romCount++;
 //			}
-
 
 
 		}

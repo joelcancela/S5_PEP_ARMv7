@@ -1,7 +1,7 @@
 package arm.m0.Instructions;
 
 /**
- * Created by NIKITA ROUSSEAU on 01/01/2017.
+ * Move (immediate)
  */
 //A7-312 2args
 public class MOV {
@@ -9,7 +9,7 @@ public class MOV {
 	String rd;
 	String imm8;
 
-	public MOV(String[] args){
+	public MOV(String[] args) {
 
 		//args[1] 8 bits
 		imm8 = String.format("%08d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(args[1].substring(1)))));
@@ -20,6 +20,6 @@ public class MOV {
 
 	@Override
 	public String toString() {
-		return "00100"+rd+imm8;
+		return "00100" + rd + imm8;
 	}
 }

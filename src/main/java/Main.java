@@ -6,7 +6,7 @@ import joptsimple.OptionSet;
 import java.io.IOException;
 
 /**
- * Created by Joel CANCELA VAZ on 01/01/2017.
+ * Main class
  */
 public class Main {
 	public static void main(String[] args) {
@@ -17,18 +17,17 @@ public class Main {
 		OptionSet options = parser.parse(args); //Handle the args of the command line with the options.
 
 
-
-		if(options.has("rom")){
+		if (options.has("rom")) {
 			try {
-				new ROMConverter((String)options.valueOf("rom")).convert();
+				new ROMConverter((String) options.valueOf("rom")).convert();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-		if(options.has("ram")){
+		if (options.has("ram")) {
 
 			try {
-				new RAMConverter((String)options.valueOf("ram")).convert();
+				new RAMConverter((String) options.valueOf("ram")).convert();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

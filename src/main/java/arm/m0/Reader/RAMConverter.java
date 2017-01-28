@@ -23,11 +23,11 @@ public class RAMConverter {
 		int ramCount = 0;
 		for (String line = reader.readLine(); line != null; line = reader.readLine()) {
 			String[] tokens = line.split(" ");
-			for(String s: tokens){
+			for (String s : tokens) {
 				if (ramCount % 8 == 0) {
 					ramContent += "\n";
 				}
-				ramContent+=String.format("%x",Integer.parseInt(s,10))+" ";
+				ramContent += String.format("%x", Integer.parseInt(s, 10)) + " ";
 				ramCount++;
 			}
 		}

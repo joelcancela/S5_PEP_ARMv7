@@ -1,14 +1,14 @@
 package arm.m0.Instructions;
 
 /**
- * Created by Joel CANCELA VAZ on 01/01/2017.
+ * Logical Shift Right (immediate)
  */
 public class LSRImmediate {//A7-302 3args
 	String imm5;
 	String rm;
 	String rd;
 
-	public LSRImmediate(String[] args){
+	public LSRImmediate(String[] args) {
 
 		//args[2] = nb entre 0-31 on veut le binaire sur 5 bits
 		imm5 = String.format("%05d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(args[2].substring(1)))));
@@ -22,6 +22,6 @@ public class LSRImmediate {//A7-302 3args
 
 	@Override
 	public String toString() {
-		return "00001"+imm5+rm+rd;
+		return "00001" + imm5 + rm + rd;
 	}
 }
