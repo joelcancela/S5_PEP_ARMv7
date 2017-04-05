@@ -1,9 +1,9 @@
-# ArmM0ROM
+# ARM-M0 ROM & RAM generator
 This is a configuration file generator for Logisim.<br>
 
 It allows to generate configuration files for RAM and ROM components.
 
-It was made to support some ARM M0 instructions [more details here](doc/instructions.md).
+It was made to support some ARM-M0 instructions [more details here](doc/instructions.md).
 
 ## How to use
 
