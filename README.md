@@ -3,7 +3,7 @@ This is a configuration file generator for Logisim.<br>
 
 It allows to generate configuration files for RAM and ROM components.
 
-It was made to support some ARM-M0 16bits instructions [more details here](doc/instructions.md).
+It was made to support some ARMv6 16bits instructions [more details here](doc/instructions.md).
 
 ## How to use
 
