@@ -7,7 +7,6 @@ It was made to support some ARMv7 16bits instructions [more details here](doc/in
 ## Prerequisites
 
 * Maven
-
 * Java
 
 ## Creating configuration files (.ini)
